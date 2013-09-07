@@ -1,0 +1,652 @@
+
+// 1. ROOT 					==============================
+.center { text-align: center; }
+.right { text-align: right; }
+.flatbottom { margin-bottom: 0 !important; }
+.flattop { margin-top: 0 !important; }
+.unstyled { list-style: none; }
+.zero { padding: 0; margin: 0; }
+
+iframe {
+	max-width: 98%;
+}
+
+// 2. TYPOGRAPHY 			==============================
+
+// Small Caps rule
+.smallcaps {
+text-transform: lowercase;
+font-variant: small-caps;
+}
+
+.readmore {
+//more or less site wide - readmore button at end of preview articles. Should go on the <p> or the <a>'s wrapper element
+	background: lighten($black, 95%);
+	margin: 0 -4rem 0 0;
+	border-radius: 0 0 3px 3px;
+	border-bottom: 1px solid lighten($black,90%);
+	a {
+		color: $black;
+		@extend .animated-link--left;
+		&:hover,
+		&:focus {
+			color: $primarycolor;
+		}
+	}
+}
+.panel__leader--preview .readmore {
+	margin: 0 -1rem 0 -2rem; //works with the extra left padding at desktop size
+}
+
+.readmore--alternative {
+	/*main readmore styling is pretty particular to article previews on panel__leader--preview or panel__sub elements. This is a more generic read more link that's not so specific to the container it's in. It still has 1rem neg margins left and right, just for visuals ... */
+	display: block;
+	background: lighten($black, 95%);
+	padding: 1rem 2rem;
+	margin: 0 -1rem 0 -1rem;
+	a {
+		color: $black;
+		&:hover,
+		&:focus {
+			color: $primarycolor;
+		}
+	}
+}
+
+
+
+// 3. COLOUR 				==============================
+
+/*Using the .ui-list object in _media*/
+.ui-list--yourbookmarks {
+/*Styling for Your Bookmark set*/
+	li {
+		border-bottom-color: $white;
+		background-color: $primarycolor;
+		font-size: 1.6rem;
+	}
+	a {
+		color: lighten($primarycolor, 30%);
+		&:hover,
+		&:focus {
+			color: lighten($primarycolor, 50%);
+		}
+	}
+	.action2 {
+		background: lighten($black, 90%);
+		a {
+			color: lighten($black, 70%);
+			&:hover,
+			&:focus {
+				color: $black;
+			}
+	}
+}
+}
+
+.ui-list--popular {
+/*styling for popular bookmarks set*/
+li {
+		border-bottom-color: $white;
+		background-color: $tertiarycolor;
+	}
+	a {
+		color: darken($tertiarycolor, 50%);
+		&:hover,
+		&:focus {
+			color: darken($tertiarycolor, 70%);
+		}
+	}
+}
+
+.ui-list--searchaside {
+/*styling for extra links on department search panel*/
+	li { 
+		border-bottom-color: transparent;
+	}
+}
+/*Adhoc colour options*/
+/*.clr-block gives the element a background colour
+ *.clr-text adds the colour to the text
+ *needs to be used in conjunction to .c_[dept-name] e.g.: c_it/c_ops OR c_primary/c_secondary
+*/
+.clr-block {
+	color: $white;
+	display: inline-block;
+	padding: 0 0.5rem;
+}
+.clr-block.c_it {
+	background: $itcol;
+}
+.clr-block.c_finance {
+	background: $financecol;
+}
+.clr-block.c_ops {
+	background: $opscol;
+}
+.clr-block.c_creative {
+	background: $creativecol;
+}
+.clr-block.c_rd {
+	background: $randdcol;
+}
+.clr-block.c_sales {
+	background: $salescol;
+}
+.clr-block.c_primary {
+	background: $primarycolor;
+}
+.clr-block.c_secondary {
+	background: $secondarycolor;
+}
+.clr-text.c_it {
+	color: $itcol;
+}
+.clr-text.c_sales {
+	color: $salescol;
+}
+.clr-text.c_finance {
+	color: $financecol;
+}
+.clr-text.c_ops {
+	color: $opscol;
+}
+.clr-text.c_creative {
+	color: $creativecol;
+}
+.clr-text.c_rd {
+	color: $randdcol;
+}
+.clr-text.c_primary {
+	color: $primarycolor;
+}
+.clr-text.c_secondary {
+	color: $secondarycolor;
+}
+
+// 4. TEXTURE 				==============================
+
+.primary-gradient {
+	@include linear-gradient( $white, $primarycolor);
+}
+
+// 5. ELEMENTS 				==============================
+
+/*============ BUTTONS ===========*/
+
+.btn {
+	background: $lightestneutralcolor;
+	border: 1px solid $lighterneutralcolor;
+	color: $lightneutralcolor;
+}
+.btn.prime {
+//adds green gradient bg to a button
+	@include linear-gradient ($secondarycolor, darken($secondarycolor, 5%));
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='$secondarycolor', endColorstr='darken($secondarycolor, 5%)');
+	background-color: $secondarycolor;
+	border: 1px solid transparent;
+	display:inline-block; //if it's ever inline with a default button - want the border for vertical alignment
+	color: lighten($secondarycolor, 55%);
+	.btn:hover,
+	.btn:focus {
+		background: $secondarycolor;
+		color: $white;
+	}
+}
+.btn.secondary {
+//adds blue gradient bg to a button
+	@include linear-gradient ($primarycolor, darken($primarycolor, 5%));
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='$primarycolor', endColorstr='darken($primarycolor, 5%)');
+	background-color: $primarycolor;
+	border: 1px solid transparent; //if it's ever inline with a default button - want the border for vertical alignment
+	display:inline-block;
+	color: lighten($primarycolor, 55%);
+	.btn:hover,
+	.btn:focus {
+		background: $primarycolor;
+		color: $white;
+	}
+}
+
+
+
+.send { 
+	float: right;
+	padding: 1em 2.5em;
+ }
+ 
+dl { 
+margin-top: 2em;
+}
+dt{
+color: #a5a501;
+}
+dd {
+margin-bottom: 1.2em;
+border-bottom: 1px dotted silver;
+padding-bottom: 1.2em;
+}
+
+.animated-link--left,
+.animated-link--right {
+/*transition effect on a link to animate extra left or right padding
+It needs to be used with an additional colour class to set styling for context
+Display block. will go a full column width. if you don't want it full container width add .inline > see below
+*/
+	padding: 1rem;
+	display: block;
+	border-radius: 3px;
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		}
+}
+
+.animated-link--left{
+/*Specifics for left animated button*/
+	transition: padding-left 250ms ease-out;	
+	&:hover,
+	&:focus {
+		padding-left: 3rem;
+	}
+}
+.animated-link--right{
+/*Specifics for right animated button*/
+	transition: padding-right 250ms ease-out;	
+	&:hover,
+	&:focus {
+		padding-right: 3rem;
+	}
+}
+.animated-link--left.inline,
+.animated-link--right.inline
+ {
+/*stops default animated link layout of being full container width.*/
+	display: inline-block;
+}
+
+.animated-link--left.tertiary,
+.animated-link--right.tertiary
+ {
+/*Tertiary color skin for the animated link left or right*/
+	background: $tertiarycolor;
+	color: darken($tertiarycolor, 50%);
+	@include linear-gradient($tertiarycolor, darken($tertiarycolor, 10%));
+	border-top: 1px solid lighten($tertiarycolor, 40%);
+	border-bottom: 1px solid darken($tertiarycolor, 30%);
+	&:hover,
+	&:focus {
+		color: $white;
+	}
+}
+
+.dept-bullet {
+	font-size: 1.1rem;
+	padding: 0 0.5rem;
+	margin-left: 0.5rem;
+	background: $black;
+	color: $white;
+	border-radius: 3px;
+}
+.dept-bullet--info {
+	background: $opscol;
+}
+.dept-bullet--res {
+	background: $financecol;
+}
+
+//MIKEY WELCOME MESSAGE
+.welcome {
+	display: none;
+	@include media($bp3) {
+		display: block;
+		margin-top: -2rem; //pulls it back up from the default bottom margin on the branding section
+		@include span-columns(12);
+		img { float: left; }
+		.welcome__box--message {
+			background: darken($bgcolor, 10%);
+			padding: 5px;
+			border-radius: 6px;
+			float: left;
+			margin-top: 14px;
+			margin-left: 10px;
+			max-width: 450px;
+			p {
+				border: 3px dashed $bgcolor;
+				padding: 10px;
+				margin: 0;
+				border-radius: 9px;
+			}
+			.welcome__box--triangle {
+				@include triangle(18px, darken($bgcolor, 10%), left);
+				margin-left: -20px;
+				display: inline-block;
+				margin-top: 20px;
+				float: left;
+			}
+			}
+	}
+}
+
+//DASHBOARD
+.dashboard__controls--small {
+	padding: 0;
+	
+	li {
+		margin-bottom: 1rem;
+	//background: darken($bgcolor, 20%);
+	//border-top: 1px solid $white;
+	//border-bottom: 1px solid darken($bgcolor, 40%);
+	//text-align: center;
+	//@include pad();
+	//margin-bottom: 1rem;
+	//color: $white;
+}
+}
+
+
+//BLOG
+//*******HOME PANEL
+.dashboard__blog {
+	p {
+		margin-top: 1em;
+		text-align: justify;
+}
+	h3 { 
+		margin-bottom: 0;
+		color: $directorcol;
+	}
+		
+	.portrait { 
+	@include media($bp2) {
+	padding: 0 1em 1em 0;
+	float: left; 
+	}
+	}
+}
+
+//DEPT LANDING
+//colours for departments set in _department-styles
+
+.panel header {
+	border-bottom: 1px dotted $primarycolor;
+	margin-bottom: 1rem;
+}
+
+/*========== $SEARCH============*/
+	
+.dept__search {
+//Search form and panel on department pages
+
+	@include span-columns(12);
+	border-radius: 6px;
+	margin-top: 1em;
+	margin-bottom: 1em;
+
+.supersearch {
+	@include span-columns(12);
+	@include media($bp3) {
+		@include span-columns(8);
+	}
+	form {
+		@extend .form-horizontal;
+		input[type="text"] {
+			width: 70%;
+		}
+	}
+}
+	}
+	
+.dept__searchaside {
+	@include span-columns(12);
+	@include media($bp3) {
+		@include span-columns(4);
+		@include omega();
+		}
+	li {
+		@include media($bp3) {
+		text-align: right;
+		}
+	}
+	}
+
+.dept__more {
+	header {
+		border-bottom: none;
+		h2,h3,h4,h5 { 
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+//$BOOKMARKS
+.bookmark {
+//puts the bookmark options in top right of the article panel
+	position: absolute;
+	top: 0;
+	right: 1rem;
+
+.favorites_status {
+//text styling for confirmation message when action first completed
+	color: lighten($black, 30%);
+	font-size: 1.2rem;
+}
+
+//icon font used to show delete icon - this sets font display attributes
+.bookmark--delete .fs1 {
+	color: lighten($black, 50%);
+	&:hover,
+	&:focus {
+		color: $black;
+	}
+}
+.bookmark--save .fs1 {
+	color: $primarycolor;
+	&:hover,
+	&:focus {
+		color: $black;
+	}
+}
+.bookmark--bookmarked .fs1 {
+	color: $primarycolor;
+	font-size: 3rem;
+}
+a {
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+}
+
+//$RESOURCES
+.resource__item {
+//li item
+	background: $tertiarycolor;
+	border-radius: 4px;
+	margin-bottom: 0.5rem;
+	a {
+		padding: 1.6rem 3rem 1.6rem;
+		color: rgba($black, 0.6);
+		font-weight: $baseboldfontweight;
+		transition: padding-left 250ms ease-out;
+		&:hover,
+		&:focus {
+			padding-left: 5rem;
+			color: $black;
+			text-decoration: none;
+		}
+	}
+	.resource--notes {
+		background: lighten($bgcolor,5%);
+		border-radius: 0 4px 4px 0;
+		padding: 1.6rem 2rem 0.2rem 1rem;
+	}
+}
+
+
+
+//PUBLISH FORMS
+.resources__list {
+	@extend %panel;
+	li {
+		@include pad(1rem 0);
+		border-bottom: 1px solid rgba($black, 0.2);
+	}
+}
+
+.publish form {
+//add some styling to channel:form elements where classes cannot be specified
+	@extend .form-horizontal;
+	.single-upload input[type="file"] {
+	//better file upload styling for single file upload. need to be specific othersise carries to file upload in the grid fields which doesn't look good.
+		@extend .btn;
+		border: 2px solid $bgcolor;
+		display: block;
+		width: 100%;
+		line-height: 0; //aligns button with file text
+		padding: 2rem;
+		&:hover,
+		&:focus {
+			background: lighten($bgcolor, 5%);
+		}
+	}
+	.WysiHat-container {
+		width: 100%; //overwrites default EE styling which is 99.5% and doesn't look tidy
+	}
+}
+
+//LOGIN FORM 
+
+.site-form {
+//set to use form-horizontal styling
+	@extend .form-horizontal;
+}
+
+//SEARCH RESULTS
+.searchresults {
+	@extend %panel;
+	margin-bottom: 2rem;
+	.searchresults__item a {
+		border-bottom: 1px solid rgba($black, 0.3);
+		display: block;
+		@extend %panel;
+		&:hover,
+		&:focus { 
+		background: rgba($black, 0.1);
+		 }
+		.searchresults__item--button {
+		margin-bottom: 0;
+	}
+	}
+}
+
+.searchagain {
+	@extend %panel;
+}
+
+//$SHARE
+.share.dept__leadarticle h3 {
+//add right margin for small screens to stop icon overlapping text
+	margin-right: 4rem;
+	@include media($bp5) {
+		margin-right: auto;
+	}
+}
+.avatar {
+//makes member avatar circular and sets a drop shadow
+	border-radius: 50px;
+	box-shadow: -2px 3px 8px 0;
+}
+
+.share__listing .panel__sub:nth-child(3n+4) {
+//essentially random background color variations for Shared items listings
+	background: lighten($bgcolor,3%);
+	border: 1px solid $white;
+}
+.share__listing--headline {
+	font-size: 2rem;
+	font-weight: $baseboldfontweight;
+}
+
+//$COMMENTS 
+
+.comments__comment {
+//single comment
+	border-bottom: 1px solid lighten($black, 80%);
+	margin-bottom: 2rem;
+}
+.comments__author--name {
+//member name
+	text-transform: capitalize;
+	color: $primarycolor;
+}
+
+//FOOTER
+footer h4 {
+		margin-bottom: 0;
+		color: $secondarycolor;
+		font-size: 1.7rem;
+		a {
+			color: $secondarycolor;
+			&:hover,
+			&:focus {
+				color: darken($secondarycolor, 10%);
+			}
+	}
+}
+footer li {
+	font-size: 1.4rem;
+}
+footer .col li a {
+	display: block;
+	background: rgba($white, 0.3);
+	color: $secondarycolor;
+	margin-bottom: 0.5rem;
+	padding: 0.5rem;
+	&:hover,
+	&:focus {
+		background: rgba($white, 0.5);
+		color: darken($secondarycolor, 10%);
+		text-decoration: none;
+	}
+	small {
+		display: block;
+		font-size: 1.1rem;
+		text-transform: uppercase;
+		color: lighten($secondarycolor, 10%);
+	}
+ }
+.footer__events ul {
+	margin: 0;
+	padding: 0.5rem;
+	background: rgba($white, 0.7);
+	
+	li {
+		border-bottom: 1px dotted $secondarycolor;
+		margin-bottom: 1rem;
+		&:last-of-type {
+			border-bottom: none;
+			margin-bottom: 0;
+		}
+		a {
+		padding: 0; 
+		}
+	.footer__events--day {
+		background: $primarycolor;
+		color: $white;
+		min-width: 3rem;
+		text-align: center;
+	}
+	}
+}
+
+
+// NAVIGATION
+// ===============================================================
+// 6. LAYOUT 				==============================
+// 7. VENDOR-SPECIFIC 		==============================
+// 9. TEMPLATE SPECIFICS 	==============================
+
+

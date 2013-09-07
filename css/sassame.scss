@@ -1,0 +1,64 @@
+// Define the ‘atmosphere’ of your design in this config file
+@import "config";
+
+@import "partials/reset";
+
+
+// Sass mixins
+@import "partials/mixins";
+@import "partials/sassame-mixins";
+
+// Site-wide styles
+@import "partials/site";
+@import "partials/media";
+//@import "partials/font-opensans";
+@import "partials/font-varela-round";
+@import "partials/font-roboto";
+
+
+// Layout styles
+@import "neat/neat";
+@import "partials/layout";
+
+
+// Misc. HTML elements
+@import "partials/elements";
+
+// Atmosphere
+@import "partials/typography";
+@import "partials/colour";
+@import "partials/branding";
+
+
+// Configure which Sass partials, and therefore CSS,
+// you want to include in your project. You don’t need to remove the
+// references, nor delete the files from your project (you may need
+// them later,) simply comment them out using // 
+//@import "partials/bootstrap-accordion";
+//@import "partials/bootstrap-alerts";
+//@import "partials/bootstrap-breadcrumbs";
+//@import "partials/bootstrap-carousel";
+//@import "partials/bootstrap-hero";
+//@import "partials/bootstrap-media";
+//@import "partials/bootstrap-modal";
+//@import "partials/bootstrap-navs";
+//@import "partials/bootstrap-navbar";
+//@import "partials/bootstrap-pager";
+//@import "partials/bootstrap-pagination";
+@import "partials/bootstrap-popover";
+@import "partials/bootstrap-tables";
+//@import "partials/bootstrap-tooltip";
+//@import "partials/bootstrap-wells";
+@import "partials/bootstrap-forms";
+//@import "partials/bootstrap-form-help";
+@import "partials/bootstrap-form-horizontal";
+@import "partials/bootstrap-form-search";
+@import "partials/bootstrap-form-buttons";
+
+//GRO STYLES
+@import "partials/furniture";
+@import "partials/slidemenu";
+@import "partials/calendar";
+
+//CATEGORY GROUP STYLING
+@import "partials/department-styles"

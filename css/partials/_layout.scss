@@ -1,0 +1,211 @@
+
+
+.outer { 
+	@include outer-container;
+}
+
+
+//HOME -- DASHBOARD
+.dashboard__controls {
+	@include media($bp5){
+		@include span-columns(9);
+		}
+}
+
+
+.dashboard__blog {
+	@extend %panel;
+	@include span-columns (12);
+	@include media($bp5){
+		@include span-columns(3);
+		@include omega();
+		}
+}
+
+.dashboard__controls li {
+	@include span-columns(4);
+	@include omega(3n);
+	@include pad(0.5%);
+	@include media($bp3){
+		@include span-columns(3);
+		@include omega-reset(3n);
+		@include omega(4n);
+	}
+	li { 
+		width: 100%;
+		padding: 0;
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+//OBJECTS
+
+/*===============================
+following are main blocks for building up content areas
+================================*/
+.panel {
+//.panel see %panel _elements.scss - creates content regions with background and padding
+//this value doesn't set any columns so most likely needs to be used with another specific panel class to avoid clearing issues
+	@extend %panel;
+	position: relative;
+	border-radius: 3px;
+	border: 1px solid lighten($black,90%);
+}
+
+.panel.panel--highlight {
+//as described, standard panel with a background color
+	@include span-columns(12);
+	background: lighten($bgcolor, 5%);
+	border: none; //get rid of the default panel border
+	border-bottom: 1px solid lighten($black, 80%);
+}
+
+
+.panel__leader {
+//lead content with --secondary department icon type - defaults to full width block. half page object available
+	@include span-columns(12);
+}
+
+.panel__leader--preview {
+//half page column on tablets and up
+	@include span-columns(12);
+	@include media($bp5) {
+		@include span-columns(6);
+	}
+}
+
+.panel.panel__leader--preview,
+.panel.panel__leader {
+	@include media($bp4) {
+		padding-left: 9rem; //needed here for specificity - used to clear the department icon on top left
+		}
+	}
+
+.panel__sub {
+//additional content preview sections gets --tertiary department icon type
+	@include span-columns(12);
+	@include media($bp5) {
+		@include span-columns(6);
+	}
+}
+.panel.panel__sub {
+	padding-right: 7rem;
+}
+
+.panel__sub-wrapper--1col {
+//wraps .panel__sub elements when they're wanted in a half page column, typically alongside .panel__leader--preview
+	@include span-columns(12);
+	@include media($bp5) {
+		@include span-columns(6);
+		@include omega();
+		.panel__sub {
+			@include span-columns(6 of 6);
+		}
+	}
+}
+
+.panel__sub-wrapper--grid {
+//wraps .panel__sub elements into a 2 col grid, typically after .panel__leader
+	@include span-columns(12);
+	.panel__sub {
+//add right margin when shown in grid
+		@include omega(2n);
+		}
+}
+.dept__grid.panel__sub-wrapper--grid .panel__sub {
+//OK - a hack because the nth child isn't being applied as expected on the department info pages. Using omega(3n) to get (2n) effect. Weird... this is the department page articles only. other pages seem to work correctly
+	@include omega-reset(2n);
+	@include omega(3n);
+}
+
+
+
+//SHARE IT
+.share {
+	@include span-columns(12);
+	@extend %panel;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	header {
+		@include media($bp4) {
+			@include span-columns(6);
+		}
+	}
+	.share__submit {
+		@include media($bp4) {
+			@include span-columns(6);
+			@include omega();
+		}
+	}
+}
+
+.share__listing--item {
+		@extend %panel;
+		@include media($bp3) {
+			@include span-columns(6);
+			@include omega(2n);
+		}
+	}
+
+//FOOTER
+footer {
+	border-top: 2px dashed $secondarycolor;
+	margin-top: 3em;
+	/** To edit this background, follow this link:
+http://svgeneration.com/generate/Oriental-Roof?scale=7.4&color-1=f5ece4&fill-1=e1eaa9&color-2=f5ece4&fill-2=e1eaa9&color-3=f5ece4&fill-3=e1eaa9&color-4=f5ece4&fill-4=e1eaa9&color-5=f5ece4&fill-5=e1eaa9&
+*/
+background-color: #f5ece4;background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nMjA3LjIwMDAwMDAwMDAwMDAyJyBoZWlnaHQ9JzM3Jz4KCTxkZWZzPgoJCTxnIGlkPSdjdXJ2ZXMnPgoJCQk8cGF0aCBmaWxsPScjZTFlYWE5JyBzdHJva2U9JyNmNWVjZTQnIGQ9J00wIDI5LjZjMjkuNiwyOS42LCA3NCwyOS42IDEwMy42MDAwMDAwMDAwMDAwMSwwdi0xMDBoLTEwMy42MDAwMDAwMDAwMDAwMXonLz4KCQkJPHBhdGggZmlsbD0nI2UxZWFhOScgc3Ryb2tlPScjZjVlY2U0JyBkPSdNMCAyMi4yMDAwMDAwMDAwMDAwMDNjMjkuNiwyOS42LCA3NCwyOS42IDEwMy42MDAwMDAwMDAwMDAwMSwwJy8+CgkJCTxwYXRoIGZpbGw9JyNlMWVhYTknIHN0cm9rZT0nI2Y1ZWNlNCcgZD0nTTAgMTQuOGMyOS42LDI5LjYsIDc0LDI5LjYgMTAzLjYwMDAwMDAwMDAwMDAxLDAnLz4KCQkJPHBhdGggZmlsbD0nI2UxZWFhOScgc3Ryb2tlPScjZjVlY2U0JyBkPSdNMCA3LjRjMjkuNiwyOS42LCA3NCwyOS42IDEwMy42MDAwMDAwMDAwMDAwMSwwJy8+CgkJCTxwYXRoIGZpbGw9JyNlMWVhYTknIHN0cm9rZT0nI2Y1ZWNlNCcgZD0nTTAgMGMyOS42LDI5LjYsIDc0LDI5LjYgMTAzLjYwMDAwMDAwMDAwMDAxLDAnLz4KCQk8L2c+Cgk8L2RlZnM+Cgk8cmVjdCB3aWR0aD0nMTAyJScgeD0nLTElJyB5PSctMSUnIGhlaWdodD0nMTAyJScgZmlsbD0nI2UxZWFhOSc+PC9yZWN0PgoJPHVzZSB4PScwJyB5PSctMi45NjAwMDAwMDAwMDAwMDA0JyB4bGluazpocmVmPScjY3VydmVzJyAvPgoJPHVzZSB4PScxMDMuNjAwMDAwMDAwMDAwMDEnIHk9Jy0yLjk2MDAwMDAwMDAwMDAwMDQnIHhsaW5rOmhyZWY9JyNjdXJ2ZXMnIC8+Cgk8dXNlIHg9Jy01MS44MDAwMDAwMDAwMDAwMDQnIHk9Jy0xNy43NicgeGxpbms6aHJlZj0nI2N1cnZlcycgLz4KCTx1c2UgeD0nNTEuODAwMDAwMDAwMDAwMDA0JyB5PSctMTcuNzYnIHhsaW5rOmhyZWY9JyNjdXJ2ZXMnIC8+Cgk8dXNlIHg9JzE1NS40JyB5PSctMTcuNzYnIHhsaW5rOmhyZWY9JyNjdXJ2ZXMnIC8+Cgk8dXNlIHg9JzAnIHk9Jy0zOS45NjAwMDAwMDAwMDAwMScgeGxpbms6aHJlZj0nI2N1cnZlcycgLz4gIAoJPHVzZSB4PScxMDMuNjAwMDAwMDAwMDAwMDEnIHk9Jy0zOS45NjAwMDAwMDAwMDAwMScgeGxpbms6aHJlZj0nI2N1cnZlcycgLz4KPC9zdmc+');
+}
+
+//COLUMNS
+//mostly occasional nested columns for one-off layouts
+
+.c-third {
+	@include pad(1rem);
+	@include media($bp3){
+		@include span-columns(6);
+		@include omega(2n);
+	}
+	@include media($bp5){
+	@include span-columns(4);
+	@include omega-reset(2n);
+	@include omega(3n);
+	}
+}
+
+.col {
+	@include pad(2rem 0);
+	@include media($bp3) {
+		@include span-columns(6);
+		@include omega(2n);
+	}
+	@include media($bp4) {
+		@include span-columns(4);
+		@include omega-reset(2n);
+		@include omega(3n);
+	}
+	@include media($bp5) {
+		@include span-columns(3);
+		@include omega-reset(3n);
+		@include omega(4n);
+	}
+}
+.article-col {
+	@include span-columns(12);
+	@include media($bp3) {
+		@include span-columns(8);
+	}
+}
+.aside-col {
+	@include span-columns(12);
+	@include media($bp3) {
+		@include span-columns(4);
+		@include omega();
+		}
+}
+
+
+

@@ -1,0 +1,185 @@
+
+
+//wrapper for overflow scroll on small screens
+.calendar--wrapper {
+	overflow: scroll;
+	@include media($bp3) {
+		min-width: 99%;
+		overflow: auto;
+	}
+	.calendar {
+		min-width: 37em; //bp3 is 37.5em;
+	}	
+	
+}
+
+.calendar__day-cell {
+	width: 12%;
+	background: lighten($bgcolor, 60%);
+	border: 1px solid $bgcolor;
+	@extend .nopad; //no padding so the date can sit tight on border. other elements have to be separately padded
+}
+.calendar__day-cell .num { 
+//calendar day date
+	background: lighten($black, 10%);
+	color: $white;
+	padding: 0.5rem;
+	text-align: center;
+	line-height: 1.2rem;
+	font-size: 1.2rem;
+	display: block;
+}
+
+.calendar .fs1 {
+//information icon per event
+	color: $primarycolor;
+	font-style: normal;
+}
+
+//out of range dates
+.calendar__day-cell--oor .num {
+	background: #e9e9e9;
+	color: #666;
+}
+
+
+.table.calendar thead th {
+	background: $primarycolor;
+	color: $white;
+	text-transform: uppercase;
+	text-align: center;
+	border: none;
+	&:first-of-type {
+		text-align: left;
+	}
+	&:last-of-type {
+		text-align: right;
+	}
+	a { 
+		color: lighten($primarycolor, 30%);
+		font-size: 0.95rem;
+		font-weight: 400;
+		&:hover { 
+			color: $white;
+		}
+		 }
+	
+}
+
+.table.calendar .table-inner thead th { 
+	background: lighten($primarycolor, 20%);
+	text-align: center;
+	color: darken($primarycolor, 30%);
+	font-weight: 400;
+	font-size: 1.2rem;
+	border: none;
+}
+
+.table.calendar td.nopad {
+	@extend .zero;
+}
+.calendar--inner-table {
+	width: 99%;
+}
+
+.calendar__event {
+//single event within a day
+	background: lighten($bgcolor, 5%);
+	@include pad(5px);
+	font-size: 1.1rem;
+	border-bottom: 1px solid $white;
+}
+/*.calendar__event--time {
+	display: inline-block;
+	padding: 0 .5rem;
+	background: lighten($primarycolor, 70%);
+	color: lighten($black, 30%);
+	margin-top: 0.5rem;
+}*/
+.calendar__event--title {
+	display: block;
+	text-transform: uppercase;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.calendar__addevent {
+	@extend %panel;
+}
+
+//SAFECRACKER POST
+/*code here gets a bit nasty. Markup is generated from Solspace Calendar module which we've overwriting/hacking quite a bit.
+sadly - most of these !important's are needed :( */
+#calendar_fields div.rule { 
+//wrapper for the set of date/time pickers
+	overflow: hidden;
+	background: lighten($bgcolor, 5%) !important;
+	border: 1px solid $bgcolor !important;
+}
+/*#calendar_fields div.rule div.all_day {
+//is all day event row
+//changed my mind - don't think this should be selectable on front end. The calendar widget hides the start/end time when checked. doesn't really work
+	padding-left: 0 !important;
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 1rem;
+}*/
+
+#calendar_fields div.rule .all_day #all_day_1 { 
+//checkbox for Yes all day event
+	float: left;
+	width: 20px !important;
+	margin-left: 18%;
+	margin-right: 20px;
+	}
+#calendar_fields div.rule .all_day label { 
+//label for all day event
+	width: 50% !important;
+	text-align: left;
+	}
+
+#calendar_fields div.rule div.date input {
+	width: 50% !important;
+}
+
+#calendar_fields div.rule div.leader label,
+#calendar_fields div.rule div.time label
+ {
+//labels for datepicker & time elemenst
+	width: 25% !important;
+	text-align: right !important;
+	padding: 14px 10px 0 0 !important;
+}
+
+.date.leader, .time {
+//row for datepicker label and input  && time inputs
+	width: 99%;
+	margin-bottom: 2rem;
+}
+
+#calendar_calendars, .rule_number, .group.first.type .leader, .group.repeat, div.all_day {
+//don't want to offer these options on the front end form
+	display: none;
+	visibility: hidden;
+	}
+#calendar_fields div.rule div.time select {
+	//AM/PM selects
+	height: 45px;
+	border: 1px solid #999;
+	margin-top: 2px !important;
+}
+.group.repeat { clear: left; width: 100%; float: left; }
+#calendar_fields label { float: left; width: 15%; }
+#calendar_fields input[type="text"] { float: left; width: 50%;}
+#calendar_fields select { float: left; width: 20%;}
+
+.ui-datepicker .ui-datepicker-header { height: 50px !important; }
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+	color: #555;
+}
+
+//#calendar_fields .all_day input { width: 50%; }
+//#calendar_fields .all_day { float: left; width: 100%; }
+//#calendar_fields label { width: 20%; text-align: right; padding-right: 24px; }

@@ -1,0 +1,22 @@
+.branding {
+	background-color: $white;
+	margin-bottom: 1rem;
+	padding: 0 1rem;
+	box-shadow: 0 -1px 5px;
+}
+
+.branding .logo {
+//ensure it's on top of the jQuery panel navigation stuff
+	position: relative;
+	z-index: 999;
+	float: right;
+}
+
+.branding__head {
+	position: relative;
+	.menu-trigger {
+		float: left;
+	}
+}
+
+

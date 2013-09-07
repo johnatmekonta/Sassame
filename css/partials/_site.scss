@@ -1,0 +1,51 @@
+@-webkit-viewport { 
+width : device-width; }
+
+@-moz-viewport { 
+width : device-width; }
+
+@-ms-viewport { 
+width : device-width; }
+
+@-o-viewport { 
+width : device-width; }
+
+@viewport { 
+width : device-width; }
+
+html {
+/*background-color: $bgcolor;
+//editable at: http://codepen.io/progers/pen/eAasl
+background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCI+CjxmaWx0ZXIgaWQ9Im4iIHg9IjAiIHk9IjAiPgo8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC43IiBudW1PY3RhdmVzPSIxMCIgc3RpdGNoVGlsZXM9InN0aXRjaCI+PC9mZVR1cmJ1bGVuY2U+CjwvZmlsdGVyPgo8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2Y0ZWJlMiI+PC9yZWN0Pgo8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZmlsdGVyPSJ1cmwoI24pIiBvcGFjaXR5PSIwLjQiPjwvcmVjdD4KPC9zdmc+");*/
+font-size : 62.5%;
+-webkit-overflow-scrolling : touch;
+-webkit-tap-highlight-color : $lightestneutralcolor;
+-webkit-text-size-adjust : 100%;
+-ms-text-size-adjust : 100%; }
+
+body {
+@include zero;
+width : 100%;
+font-family : $basefontfamily;
+@include font-size($basefontsize);
+line-height : $baselineheight;
+color : $textcolor;
+
+}
+
+.light-bg {
+//gives background image texture to all pages. jPanel menu was blocking background image being added to body or html
+background: $bgcolor url(http://groint.mekonta.co.uk/img/core/grin_lg_background.png) repeat;
+padding-top: 2rem;
+}
+
+body:after {
+content : '320';
+display : none; }
+
+.m-hide {
+@include hidden; }
+
+[role="contentinfo"] {
+padding : $baselineheight $gutterwidth / 2;
+text-align : center; }

@@ -1,0 +1,102 @@
+.jPanelMenu, body {
+	overflow-x:hidden;
+} 
+#jPanelMenu-menu {
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	height:100%;
+	z-index:-1;
+	overflow-x:hidden;
+	overflow-y:scroll;
+	-webkit-overflow-scrolling:touch;
+	/** To edit this background, follow this link: http://codepen.io/progers/pen/eAasl*/
+	background-color: #333333;
+	background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCI+CjxmaWx0ZXIgaWQ9Im4iIHg9IjAiIHk9IjAiPgo8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC43IiBudW1PY3RhdmVzPSIxMCIgc3RpdGNoVGlsZXM9InN0aXRjaCI+PC9mZVR1cmJ1bGVuY2U+CjwvZmlsdGVyPgo8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iIzMzMzMzMyI+PC9yZWN0Pgo8cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgZmlsdGVyPSJ1cmwoI24pIiBvcGFjaXR5PSIwLjIiPjwvcmVjdD4KPC9zdmc+");
+		@include pad(10px);
+}
+
+.jPanelMenu-panel{ 
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:2;
+	width:100%;
+	min-height:100%;
+	background: rgb(243, 243, 186)!important; //ramdom color just for use here. No clue where else this background is set, think it's the jPanel Menu plugin dooing it. but we need !important
+}
+#jPanelMenu-menu {
+	display: block;
+}
+.jPanelMenu-panel #menu {
+	display: none;
+}
+
+.menupanel__nav {
+	clear: right;
+	}
+
+.menu-trigger {
+	display: inline-block;
+	background: darken($tertiarycolor,15%);
+	color: darken($tertiarycolor, 50%);
+	padding: 10px 20px;
+	//border-radius: 8px;
+	border-top: 1px solid $tertiarycolor;
+	border-bottom: 1px solid darken($tertiarycolor, 30%);
+	margin-top: 8px;
+	&:hover {
+		background:$tertiarycolor;
+		color: $white;
+		border-bottom: 1px solid darken($tertiarycolor, 30%);
+		border-top: 1px solid white;
+		text-decoration: none;
+	}
+}
+
+#jPanelMenu-menu .menu-trigger {
+//close button
+	margin-bottom: 20px;
+	border-radius: 5rem; 
+	padding: 1rem;
+	line-height: 0;
+	float: right;
+	border: none;
+	@include clearfix;
+	}
+
+//colouring for departments is set in _department-styles.scss
+#jPanelMenu-menu li {
+	background: $primarycolor;
+	padding: 0.1rem;
+	margin-bottom: 1rem;
+	font-family: $baseheadingfont;
+}
+#jPanelMenu-menu li a {
+	display: block;
+	padding: 0.7rem;
+	color: rgba($black, 0.5);
+	background-image: url(http://groint.mekonta.co.uk/img/core/icon_bg_texture.png);
+	@extend .animated-link--left;
+	&:hover { 
+		color: rgba($black, 0.8);
+		text-decoration: none;
+	}
+}
+
+#jPanelMenu-menu .publish-nav {
+	//nav options for publish icons
+	@include clearfix;
+	background: $primarycolor url(http://groint.mekonta.co.uk/img/core/icon_bg_texture.png);
+	text-align: center;
+	@include zero;
+	margin-bottom: 2rem;
+	li { 
+		display: inline;
+		a { 
+			display: inline-block;
+			padding: 1.5rem;
+			}
+	}
+}

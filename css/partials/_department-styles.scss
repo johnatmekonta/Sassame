@@ -1,0 +1,273 @@
+.dept__icon {
+//sets default for the department icon.
+	position: absolute;
+	top: -.5rem;
+	right: 0;
+	width: 6rem;
+	height: 6rem;
+	@include media($bp5) {
+		top: -.5rem;
+		right: -.5rem;
+	}
+	a {
+		display: inline-block;
+		width: 100%; //Firefox wants this
+		margin: 1%;
+	}
+}
+
+//Secondary for larger department icon set on left of article at desktop size
+.dept__icon--secondary {
+	@include media($bp5) {
+	left: -0.5rem;
+	width: 8rem;
+	height: 8rem;
+	}
+}
+
+/*PRIMARY IS FOR HOME SCREEN DASHBOARD*/
+.dept__icon--primary {
+	color: $white;
+	margin-bottom: 2.3%;
+	//border-radius: 5px;
+	overflow: hidden;
+	position: relative;
+	
+	a {
+		display: inline-block;
+		max-width: 100%; //Firefox seems to require this
+		position: relative;
+		top:0;
+		left: 0;
+		background-image: url(http://groint.mekonta.co.uk/img/core/icon_bg_texture.png);
+	}
+}
+
+
+.c_it .dept__icon,
+#jPanelMenu-menu li.c_it,
+.dept__icon--primary.c_it
+ {
+	background-color: $itcol;
+	a {
+	&:hover,
+	&:focus {
+		background-color: darken($itcol, 10%);
+	}
+	}
+	
+}
+
+.c_finance .dept__icon,
+#jPanelMenu-menu li.c_finance,
+.dept__icon--primary.c_finance {
+	background-color: $financecol;
+	a{
+	&:hover,
+	&:focus {
+		background-color: darken($financecol, 10%);
+	}
+	}
+}
+
+.c_rd .dept__icon,
+#jPanelMenu-menu li.c_rd,
+.dept__icon--primary.c_rd {
+	background-color: $randdcol;
+	a{
+	&:hover,
+	&:focus {
+		background-color: darken($randdcol, 10%);
+	}
+	}
+}
+
+.c_ops .dept__icon,
+#jPanelMenu-menu li.c_ops,
+.dept__icon--primary.c_ops {
+	background-color: $opscol;
+	a{
+	&:hover,
+	&:focus {
+		background-color: darken($opscol, 10%);
+	}
+	}
+}
+
+.c_sales .dept__icon,
+#jPanelMenu-menu li.c_sales,
+.dept__icon--primary.c_sales {
+	background-color: $salescol;
+	a{
+	&:hover,
+	&:focus {
+		background-color: darken($salescol, 10%);
+	}
+	}
+}
+
+.c_creative .dept__icon,
+#jPanelMenu-menu li.c_creative,
+.dept__icon--primary.c_creative {
+	background-color: $creativecol;
+	a{
+	&:hover,
+	&:focus {
+		background-color: darken($creativecol, 10%);
+	}
+	}
+}
+
+.c_calendar .dept_icon,
+#jPanelMenu-menu li.c_calendar,
+.dept__icon--primary.c_calendar
+ {
+	background-color: $calendarcol;
+	a{
+	&:hover,
+	&:focus {
+		background-color: darken($calendarcol, 10%);
+	}
+	}
+}
+
+.c_directory .dept_icon,
+#jPanelMenu-menu li.c_directory,
+.dept__icon--primary.c_directory
+ {
+	background-color: $directorycol;
+	a{
+	&:hover,
+	&:focus {
+		background-color: darken($directorycol, 10%);
+	}
+	}
+}
+
+.c_share .dept__icon,
+#jPanelMenu-menu li.c_share,
+.dept__icon--primary.c_share
+ {
+	background-color: $sharecol;
+	a{
+	&:hover,
+	&:focus {
+		background-color: darken($sharecol, 10%);
+	}
+	}
+}
+
+.c_blog .dept__icon,
+#jPanelMenu-menu li.c_blog,
+.dept__icon--primary.c_blog
+ {
+	background-color: $directorcol;
+	a{
+	&:hover,
+	&:focus {
+		background-color: darken($directorcol, 10%);
+	}
+	}
+}
+/*TERTIARY IS CIRCULAR ICON WITH NO STITCHING*/
+.dept__icon.dept__icon--tertiary,
+.share__icon--member {
+	margin: -0.5rem -0.5rem 0 0;
+	border-radius: 30rem;
+	a { 
+		padding: 0.4rem;
+		border: none;
+	&:hover,
+	&:focus {
+		border: none;
+		opacity: 0.8;
+	}
+	 }
+}
+
+
+/*.dept__icon.c_it,
+.c_it .dept__icon
+ {
+	background: $itcol;
+}
+.c_finance .c_sub_icon {
+	background: $financecol;
+}
+.c_rd .c_sub_icon {
+	background: $randdcol;
+}
+.c_ops .c_sub_icon {
+	background: $opscol;
+}
+.c_sales .c_sub_icon {
+	background: $salescol;
+}
+.c_creative .c_sub_icon {
+	background: $creativecol;
+}
+.dept__icon.c_blog,
+.c_blog .dept__icon
+ {
+	background: $directorcol;
+}
+.dept__icon.c_share,
+.c_share .dept__icon
+ {
+	background: $sharecol;
+}*/
+
+
+/*.c_it {
+	h1, h2, h3, h4, h5, a {
+		color: $itcol;
+	}
+	header {
+		border-bottom: 2px dotted $itcol;
+	}
+}
+.c_finance {
+	h1, h2, h3, h4, h5, a {
+		color: $financecol;
+	}
+	header {
+		border-bottom: 2px dotted $financecol;
+	}
+}
+.c_rd {
+	h1, h2, h3, h4, h5, a {
+		color: $randdcol;
+	}
+	header {
+		border-bottom: 2px dotted $randdcol;
+	}
+}
+.c_ops {
+	h1, h2, h3, h4, h5, a {
+		color: $opscol;
+	}
+	header {
+		border-bottom: 2px dotted $opscol;
+	}
+}
+.c_creative {
+	h1, h2, h3, h4, h5, a {
+		color: $creativecol;
+	}
+	header {
+		border-bottom: 2px dotted $creativecol;
+	}
+}
+.c_sales {
+	h1, h2, h3, h4, h5, a {
+		color: $salescol;
+	}
+	header {
+		border-bottom: 2px dotted $salescol;
+	}
+}*/
+
+//search panel colours
+.dept__search {
+	background: lighten($bgcolor, 5%);
+}
