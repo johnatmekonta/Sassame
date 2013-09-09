@@ -1,26 +1,121 @@
-<h1>Sassame</h1>
+<!doctype html>
 
+<html lang="en">
+
+<head>
+
+       
+      
+<title>Sassame - stylesheet</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="cleartype" content="on">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="robots" content="noindex, nofollow" />
+
+<!-- For all browsers -->
+<link rel='stylesheet' href='css/sassame.css' />
+<style type='text/css'>
+.panel__sub-wrapper--grid > div:nth-child(2n+1) { margin-right: 0; clear: none !important; }
+.panel__sub-wrapper--grid > div:nth-child(2n+2) { margin-right: 2.35765% !important;}
+</style>
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel='stylesheet' href='css/lte-ie8.css'>
+<![endif]-->
+
+
+
+</head>
+
+<body>
+<section class="branding">
+<div class="branding__head outer">
+<a href="/" title="The Gro Company" class="logo">
+<img src="img/core/gro-logo.png" alt="The Gro Company" />
+</a>
+
+
+<a href="" class="menu-trigger">Menu</a>
+
+<div class="jPanelMenu-panel">
+<div class="menu-wrap" id="menu">
+
+<a href="" class="menu-trigger">Close</a>
+
+
+<nav role="navigation">
+<ul class="unstyled">
+<li class="c_it"><a href="">IT</a></li>
+<li class="c_finance"><a href="">Finance</a></li>
+<li class="c_rd"><a href="">R&amp;D</a></li>
+<li class="c_ops"><a href="">Operations</a></li>
+<li class="c_sales"><a href="">Sales</a></li>
+<li class="c_creative"><a href="">Creative &amp; Marketing</a></li>
+<li class="c_calendar"><a href="">Calendar</a></li>
+<li class="c_directory"><a href="">Staff Directory</a></li>
+<li class="c_share"><a href="">Share</a></li>
+<li class="c_blog"><a href="">Director's Blog</a></li>
+</ul>
+</nav>
+<img src="img/core/elephant.png" alt="" />
+</div>
+</div>
+
+</section><!--/branding-->
+
+<div class="light-bg">
+<section>
+<div class="outer">
+<div class="panel">
+<h1>Grin internal styleguide</h1>
+<p>Based on <b>Sassame</b> this page documents the key object options and styling variables.</p>
+<p>There are some goodies not documented here that will need to be referenced in the stylesheets - but this should cover most of the fundamental stuff.</p>
+</div>
+<div class="panel">
 <h1>Typography</h1>
+<p>The site uses 'Roboto' server from Google Fonts. Regular body weight is actually the 'light, 300' font. Bold text uses 'regular, 400'.</p>
+<p>Regular old paragraph &lt;p&gt; </p>
+<p><strong>Paragraph text bold</strong> &lt;strong&gt;</p>
+<p><em>Paragraph text italic</em> &lt;em&gt;</p>
+<p><a>Link text</a> &lt;a&gt;</p>
+<p><small>Small paragraph text</small> &lt;small&gt;</p>
+<ul>
+<li>Standard Unordered List</li>
+</ul>
+<ol>
+<li>Standard Ordered List</li>
+</ol>
+<ul class="unstyled">
+<li>Unstyled unordered list</li>
+<li>&lt;ul class="unstyled"&gt;</li>
+</ul>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+</div><!--/typography-->
 
-<p>Font: &#8216;Roboto&#8217; served from Google Fonts. Regular body weight is actually the &#8216;light, 300&#8217; font. Bold text uses &#8216;regular, 400&#8217;.</p>
-
-<p>Default head tags have 0 margin</p>
+<div class="panel">
 
 <h1>Buttons</h1>
+<p class="readmore"><a href="">Read more &lt;p class="readmore"&gt;&lt;a&gt;</a></p>
+<br />
 
-<p>Default button is grey.
-Classes of .primary, .secondary for featured styling.
-.animated-link&#8211;left, animated padding transition from left on hover
-.animated-link&#8211;right, animated padding transition from right on hover
-.inline, used with either .animated-link&#8211;xx classes to make button inline block and not 100% width.</p>
+<p><a href="" class="btn">Button</a> &lt;a class="btn"&gt;</p>
+<p><a href="" class="btn prime">Button Prime</a> &lt;a class="btn prime"&gt;</p>
+<p><a href="" class="btn secondary">Button Secondary</a> &lt;a class="btn secondary"&gt;</p>
+<p><a href="" class="btn prime animated-link--left">Animated Left</a> &lt;a class="btn prime animated-link--left"&gt;</p>
+<p><a href="" class="btn prime animated-link--right ">Animated Right</a> &lt;a class="btn prime animated-link--right"&gt;</p>
+</div>
+
 
 <h1>Layout</h1>
-
-<p>At its core Sassame is using a 12 column grid based on Neat from the Bourbon framework.</p>
-
+<p>At its core Grin is using a 12 column grid based on Neat from the Bourbon framework.</p>
 <p>Almost all content regions should be wrapped in an element (div, article, aside or whatever) with a class .panel - this class adds a background, and padding to correctly layout the content.</p>
-
-<p>In addition to .panel - use the following to get layout:</p>
+<p>Below shows the further classes that can be added <b>in addition to .panel</b> to give columns you want.</p>
 
 <div class="panel panel__leader">
 <p>.panel__leader</p>
@@ -83,8 +178,7 @@ Classes of .primary, .secondary for featured styling.
 <p><span class="c_sales clr-block">Sales</span> <span class="c_sales clr-text">Sales</span></p>
 <p><span class="c_primary clr-block">Primary</span> <span class="c_primary clr-text">Primary</span></p>
 <p><span class="c_secondary clr-block">Secondary</span> <span class="c_secondary clr-text">Secondary</span></p>
-</div>
-<!--/colours-->
+</div><!--/colours-->
 
 <div class="media panel">
 <p><strong>Media</strong> .media</p>
@@ -113,6 +207,7 @@ Classes of .primary, .secondary for featured styling.
 </div>
 </div>
 </div>
+
 
 <div class="panel">
 
@@ -150,8 +245,12 @@ Classes of .primary, .secondary for featured styling.
 
 </div>
 
-<p>&lt;/div&gt;
-&lt;/section&gt;</p>
+
+</div>
+</section>
+
+
+
 
 <footer>
 <div class="outer">
@@ -177,7 +276,7 @@ Classes of .primary, .secondary for featured styling.
 <h4>Events</h4>
 <ul class="unstyled">
 <li>Baby Show New York
-<i>4 July &gt; 12 July</i>
+<i>4 July > 12 July</i>
 </li>
 <li>Gro Annual Bun fight
 <i>1 August</i>
@@ -209,11 +308,10 @@ Classes of .primary, .secondary for featured styling.
 </div><!--/offices-->
 </div><!--/outer-->
 </footer>
-<p>&lt;/div&gt;
+</div>
 <!-- JavaScript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="js/vendor/modernizr-2.6.2-min.js"></script></p>
+<script src='js/vendor/modernizr-2.6.2-min.js'></script>
 
-<p>&lt;/body&gt;
-&lt;/html&gt;</p>
-
+</body>
+</html>

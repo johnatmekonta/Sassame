@@ -7,6 +7,9 @@
     <title>Inuit</title>
     
     <link rel="stylesheet" href="css/style.css">
+    <style type="text/css">
+    .btn { margin-right: 20px; margin-bottom: 20px; }
+    </style>
 </head>
 <body>
 <div class="wrapper">
@@ -206,8 +209,162 @@
 	</div>
 	</div><!--/Marginalia-->
 	
+	<div class="grid__item">
+	<h2>Island</h2>
+	<div class="grid__item one-half">
+	<div class=island style="background: #e9e9e9;">
+       I am boxed off.
+   </div>
+   </div><!-- 
+   --><div class="one-half grid__item">
+   <div class=islet style="background: #e9e9e9;">
+       I am boxed off but a smaller islet.
+   </div>
+   </div>
+	</div><!--/Island-->
 	
+	<div class="grid__item">
+	<h2>Block List</h2>
+	<ul class=block-list>
+      <li>Foo</li>
+      <li>Bar</li>
+      <li>Baz</li>
+      <li><a href=# class=block-list__link>Foo Bar Baz</a></li>
+   </ul>
+	</div><!--/block list-->
 	
+	<div class="grid__item">
+	<h2>Matrix</h2>
+	<div class="grid__item one-half">
+	 <ul class="matrix  three-cols">
+       <li class=all-cols>Lorem</li>
+       <li>Ipsum <a href=#>dolor</a></li>
+       <li><a href=# class=matrix__link>Sit</a></li>
+       <li>Amet</li>
+       <li class=all-cols>Consectetuer</li>
+   </ul>
+	</div><!-- 
+	 --><div class="grid__item one-half">
+	 <ul class="multi-list  four-cols">
+       <li>Lorem</li>
+       <li>Ipsum</li>
+       <li>Dolor</li>
+       <li>Sit</li>
+   </ul>
+	 </div>
+	</div><!--/Matrix-->
+	
+	<div class="grid__item">
+	<h2>Split</h2>
+	<div class="grid__item one-third">
+	<dl class=split>
+       <dt class=split__title>Burger and fries</dt>
+       <dd>&pound;5.99</dd>
+       <dt class=split__title>Fillet steak</dt>
+       <dd>&pound;19.99</dd>
+       <dt class=split__title>Ice cream</dt>
+       <dd>&pound;2.99</dd>
+   </dl>
+	</div><!-- 
+	 --><div class="grid__item one-third">
+	 <ol class="split  results">
+       <li class=first><b class=split__title>1st place</b> Bob</li>
+       <li class=second><b class=split__title>2nd place</b> Lilly</li>
+       <li class=third><b class=split__title>3rd place</b> Ted</li>
+   </ol>​
+	 </div>
+	 </div><!--/Split-->
+	 
+	 <div class="grid__item">
+	 <h2>This or This</h2>
+	 <h1 class=this-or-this>
+       <a href=# class="this-or-this__this  two-fifths">
+           Free
+       </a>
+       <span class="this-or-this__or  one-fifth">
+           or
+       </span>
+       <a href=# class="this-or-this__this  two-fifths">
+           Pro
+       </a>
+   </h1>
+	 </div><!--/This or This-->
+	 <div class="grid__item">
+	 <h2>Link Complex</h2>
+	 <a href=log-in class=link-complex>
+       <i class="s  s--user"></i> Adds hover behavior 
+       <span class=link-complex__target>Only to selected</span>
+   </a>
+	 </div>
+	 <div class="grid__item">
+	 <h2>Flyout</h2>
+	 <div class=flyout>
+       Foo
+       <div class=flyout__content>
+           <h1>Lorem</h1>
+           <p>Ipsum</p>
+       </div>
+   </div>
+	 </div>
+	 
+	 <div class="grid__item">
+	 <h1>Beautons</h1>
+	 <a class="btn" style="background: #e5e5e5;">Button</a>
+	  <a class="btn btn--small" style="background: #e5e5e5;">Button</a>
+	  <a class="btn btn--large" style="background: #e5e5e5;">Button</a>
+	  <a class="btn btn--huge" style="background: #e5e5e5;">Button</a>
+	  <a class="btn btn--full" style="background: #e5e5e5;">Button</a>
+	  <a class="btn btn--alpha" style="background: #e5e5e5;">Button</a>
+	  <a class="btn btn--beta" style="background: #e5e5e5;">Button</a>
+	  <a class="btn btn--gamma" style="background: #e5e5e5;">Button</a>
+	 </div><!--/Beautons-->
+	 
+	 <div class="grid__item">
+	 <h2>Lozenges</h2>
+	 
+	 <p>This <span class=pill>here</span> is a pill!</p>
+
+   <p>This <span class=loz>here</span> is also a lozenge!</p>
+	 </div><!--/Lozenges-->
+	 
+	 <div class="grid__item">
+	 <h2>Rules</h2>
+	 <hr class="rule  rule--ornament" data-ornament="!">
+	 <hr class="rule  rule--dotted">
+	 <hr class="rule  rule--dashed">
+	 </div><!--/Rules-->
+	 
+	 <div class="grid__item">
+	 <h2>Stats</h2>
+	 <div class=stat-group>
+        <dl class=stat>
+            <dt class=stat__title>Tweets</dt>
+            <dd class=stat__value>27,740</dd>
+        </dl>
+
+        <dl class=stat>
+            <dt class=stat__title>Following</dt>
+            <dd class=stat__value>11,529</dd>
+        </dl>
+
+        <dl class=stat>
+            <dt class=stat__title>Followers</dt>
+            <dd class=stat__value>12,105</dd>
+        </dl>
+    </div>
+	 </div><!--/Stats-->
+	 
+	 <div class="grid__item">
+	 <h2>Greybox</h2>
+	 <div class="island  greybox  greybox--medium">Header</div>
+
+   <ul class="nav  nav--fit  nav--block  greybox">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+	 </div><!--/Greybox-->
 </div>   
  
 </div>
